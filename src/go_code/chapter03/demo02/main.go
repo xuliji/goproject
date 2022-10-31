@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 // 一次性申明多个全局变量
 var (
@@ -22,7 +25,7 @@ func main() {
 	fmt.Println(a)
 
 	// 方式3：省略var，:=左侧的变量不应该是已经申明过的，否则编译不通过
-	// 等价于var name string   name = "tom"
+	//等价于var name string   name = "tom"
 	name := "tom"
 	fmt.Println(name)
 
@@ -39,4 +42,16 @@ func main() {
 	n6, name_2, n7 := 10, "jack", 13.14
 	fmt.Println(n6, name_2, n7)
 	fmt.Println(n8, name3, n9)
+
+	// 程序中+号的应用
+	// 左右是字符串表示拼接，是数字表示加法
+	str1, str2 := "tom ", "love peter"
+	str3 := str1 + str2
+	fmt.Println(str3)
+
+	// 类型相同才能相加
+	var number1, number2 = 10.0, 20.10
+	number3 := number2 + number1
+	fmt.Println(reflect.TypeOf(number3), reflect.TypeOf(str3))
+	fmt.Printf("number3类型 %T\n", number3)
 }
