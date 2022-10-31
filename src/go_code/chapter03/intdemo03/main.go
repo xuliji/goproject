@@ -23,8 +23,17 @@ func main() {
 	var c rune = 666
 	var d byte = 1
 	//fmt.Printf()用于做格式化输出
-	fmt.Printf("a占%v字节\n", unsafe.Sizeof(a))
+	//unsafe.Sizeof() 是unsafe包的函数可以返回变量的占用的字节数
+	fmt.Printf("a占%d字节\n", unsafe.Sizeof(a))
 	fmt.Printf("b占%v字节\n", unsafe.Sizeof(b))
 	fmt.Printf("c占%v字节\n", unsafe.Sizeof(c))
-	fmt.Printf("d占%v字节", unsafe.Sizeof(d))
+	fmt.Printf("d占%v字节\n", unsafe.Sizeof(d))
+
+	/*
+		golang程序中整型变量使用时,遵守保小不保大的原则,
+		即:在保证程序正确运行的情况下,尽量使用占用空间小的数据类型
+	*/
+	var age byte = 100
+	fmt.Println(age)
+
 }
