@@ -21,3 +21,8 @@ func main() {
 	fmt.Printf("ptr 的地址%v\n", &ptr)
 	fmt.Printf("ptr指向的值%v\n", *ptr)
 }
+
+/*
+值类型都有指针类型
+值类型包括:基本数据类型,数组和结构体struct
+*/
