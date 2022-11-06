@@ -15,6 +15,7 @@ func main() {
 	if age >= 18 {
 		fmt.Println("你已经成年了,需要对自己的行为负责.")
 	}
+	// golang支持在if中直接定义一个变量
 	if age1 := 20; age1 >= 18 {
 		fmt.Println("你已经成年了,需要对自己的行为负责.")
 	}
