@@ -14,7 +14,7 @@ func main() {
 	fmt.Scanf("%c", &key)
 
 	// case后面是表达式，可以是常量、变量、一个具有返回值的函数
-
+	// switch后面的表达式类型要和case表达式类型保持一致
 	switch test(key) + 1 {
 	case 'a':
 		fmt.Println("这是周一")
