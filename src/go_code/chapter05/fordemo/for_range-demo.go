@@ -13,7 +13,7 @@ func main() {
 		fmt.Printf("%c %d\n", str[i], unsafe.Sizeof(str[i]))
 	}
 
-	// 字符串遍历方式二
+	// 字符串遍历方式二 for-range
 	str = "abc~ok"
 	for index, val := range str {
 		fmt.Printf("index=%d val=%c\n", index, val)
