@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"src/go_code/chapter06/fundemo01/utils"
+	"go_code/chapter06/fundemo01/utils"
 )
 
 func main() {
