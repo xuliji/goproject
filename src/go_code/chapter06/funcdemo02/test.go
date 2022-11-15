@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 函数不能改变原始数据的值，相当于是复制了一份数据
 func test(n1 int) {
