@@ -11,4 +11,5 @@ func main() {
 
 	res := util.Cal(n1, n2, operator)
 	fmt.Println("计算结果是：", res)
+	util.Print_hello()
 }
