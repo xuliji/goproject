@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goproject/src/go_code/chapter06/funcdemo05/utils"
+	"funcdemo05/utils"
 	"strconv"
 )
 
