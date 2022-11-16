@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	util "goproject/src/go_code/chapter06/fundemo01/utils" // 包可以取别名，但是原先的名字不能用了
+	util "goproject/src/go_code/chapter06/funcdemo01/utils" // 包可以取别名，但是原先的名字不能用了
 )
 
 func main() {
