@@ -17,7 +17,17 @@ func sum(n1 int, n2 int) int {
 	return res
 }
 
+// 函数想要修改函数外的值可以用引用
+func test03(n1 *int) {
+	*n1 = *n1 + 10
+	fmt.Println("test03 n1=", *n1)
+}
+
 func main() {
 	res := sum(10, 20)
 	fmt.Println(res)
+
+	n1 := 1000
+	test03(&n1)
+	fmt.Println("main n1=", n1)
 }
