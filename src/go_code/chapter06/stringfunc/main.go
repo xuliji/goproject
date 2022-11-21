@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	str := "hello你好"
+	str := "hello 你好"
 	// 统计字符串长度， 按字节返回
 	length := len(str)
 	fmt.Println("length=", length)
@@ -51,4 +51,37 @@ func main() {
 
 	// 不区分大小写字母的字符串比较(==是区分字符大小写的)：strings.EqualFold("abc", "ABC")
 	fmt.Println(strings.EqualFold("abc", "ABC"))
+
+	// 返回子串在字符串第一次出现的index值，如果没有返回-1
+	fmt.Println(strings.Index("123456789", "789"))
+
+	// 返回子串最后一次出现的位置
+	fmt.Println(strings.LastIndex("12233344535456", "2"))
+
+	// 将指定的子串替换成另外的子串，n可以指定你希望替换第几个，如果n=-1表示全部替换
+	str2 = "go go hello"
+	str = strings.Replace(str2, "go", "go语言", -1)
+	fmt.Println(str, str2)
+
+	// 按指定的字符对字符串进行分割,返回数组
+	fmt.Println(strings.Split("hello,world,ok", ","))
+
+	// 字符串大小写转换
+	fmt.Println(strings.ToLower("ABCDEFG"))
+	fmt.Println(strings.ToUpper("abcdefg"))
+
+	// 将字符串左右两边空格去除
+	fmt.Println(strings.TrimSpace("   我爱你     "))
+	// 去掉制定字符
+	fmt.Println(strings.Trim("！   我爱你     ！", "！"))
+	// 去掉字符串左边指定字符
+	fmt.Println(strings.TrimLeft("！   我爱你     ！", "！ "))
+	// 去掉右边指定字符
+	fmt.Println(strings.TrimRight("！   我爱你     ！", "！ "))
+
+	// 判断字符串是否已指定字符串开头
+	fmt.Println(strings.HasPrefix("ftp://192.168.3.1", "ftp"))
+	// 判断字符串是不是已指定字符串结尾
+	fmt.Println(strings.HasSuffix("abc我爱你", "你"))
+
 }
