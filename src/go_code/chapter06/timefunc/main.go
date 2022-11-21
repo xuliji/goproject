@@ -23,4 +23,12 @@ func main() {
 	fmt.Printf("%v", str)
 	utils.Sleep(3 * time.Second)
 	fmt.Println("11111")
+
+	// unix时间戳和unixnano时间戳(用来获取随机数字)
+	fmt.Printf("unix时间戳：%v unixnano时间戳：%v\n", now.Unix(), now.UnixNano())
+	f := utils.Test("hello")
+	strat := time.Now().Unix()
+	f(100000)
+	coast := time.Now().Unix() - strat
+	fmt.Printf("执行test()耗费了%v秒\n", coast)
 }
