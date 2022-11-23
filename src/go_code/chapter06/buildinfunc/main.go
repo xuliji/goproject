@@ -9,5 +9,6 @@ func main() {
 
 	// new()返回的是指针
 	num2 := new(int)
+	*num2 = 100
 	fmt.Printf("num2的类型%T， num2的值%v， num2的地址%v， num2指向的值为%v\n", num2, num2, &num2, *num2)
 }
