@@ -18,4 +18,13 @@ func main() {
 	// 一次性删除所有的key
 	// 方法一:遍历map一个个删除
 	// 方法二:使用make()新建一个map,旧的让系统回收
+
+	// map查找
+	val, findres := cities["no3"]
+	if findres {
+		fmt.Println("找到了val=", val)
+	} else {
+		fmt.Println("没找到")
+	}
+
 }
