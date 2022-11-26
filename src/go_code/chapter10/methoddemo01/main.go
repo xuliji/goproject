@@ -35,4 +35,15 @@ func main() {
 	}
 	p1.Pet(&dog1) // 传指针就会改变结构体的值
 	fmt.Println(dog1.Name)
+
+	// 传递结构体的指针, 标准写法
+	(&dog1).Hobby()
+
+	// 如果结构体绑定了String()方法, 那么fmt.Println()就会默认调用这个变量的String()进行输出
+	stu := classes.Student{
+		Name: "xuliji",
+		Age:  23,
+	}
+
+	fmt.Println(&stu)
 }

@@ -23,6 +23,11 @@ func (p Person) Jisuan(n int) (res int) {
 	return res
 }
 
+// 为了提高效率,通常给方法绑定结构体的指针类型
+func (d *Dog) Hobby() {
+	fmt.Printf("Hobby=%v\n", (*d).Skill)
+}
+
 // 打印宠物
 func (p Person) Pet(pet *Dog) {
 	pet.Name = "1111"
