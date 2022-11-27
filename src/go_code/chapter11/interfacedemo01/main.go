@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 // Usb 申明一个接口
+// 接口不能包含任何变量  让结构体实现方法
 type Usb interface {
 	// Start 申明了两个没有实现的方法
 	Start()
