@@ -5,6 +5,7 @@ import (
 	"goproject/src/go_code/chapter11/encapsulate/model"
 )
 
+// 实现封装
 func main() {
 	p1 := model.NewPerson("xuliji")
 
