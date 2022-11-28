@@ -5,7 +5,7 @@ import (
 	"goproject/src/go_code/chapter11/polydemo/utils"
 )
 
-// 类型断言应用
+// 类型断言应用 重点
 func main() {
 	var usbArr [3]utils.Usb
 
