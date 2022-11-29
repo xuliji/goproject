@@ -23,6 +23,17 @@ func NewCustomer(id, Age int, Name, Gender, Phone, Email string) Customer {
 	}
 }
 
+//func NewCustomer2(Age int, Name, Gender, Phone, Email string) Customer {
+//	return Customer{
+//		Name:   Name,
+//		Gender: Gender,
+//		Age:    Age,
+//		Phone:  Phone,
+//		Email:  Email,
+//	}
+//}
+
+// GetInfo 格式化输出客户信息
 func (cus Customer) GetInfo() {
 	fmt.Printf("%v\t%v\t%v\t%d\t%v\t%v\n", cus.Id, cus.Name, cus.Gender, cus.Age, cus.Phone, cus.Email)
 }

@@ -13,15 +13,6 @@ type customView struct {
 	customService *service.CustomerService
 }
 
-// GetLoop SetLoop get和set方法
-func (view *customView) GetLoop() bool {
-	return view.loop
-}
-
-func (view *customView) SetLoop(loop bool) {
-	view.loop = loop
-}
-
 func (cv *customView) List() {
 	fmt.Println("--------------------" +
 		"客户列表" + "--------------------")
@@ -31,6 +22,46 @@ func (cv *customView) List() {
 	}
 	fmt.Println("--------------------" +
 		"客户列表完成" + "--------------------")
+}
+
+// AddCustomer 添加客户
+func (cv *customView) AddCustomer() {
+	var Age int
+	var Name, Gender, Phone, Email string
+	fmt.Println("--------添加客户--------")
+	fmt.Println("姓名：")
+	fmt.Scanln(&Name)
+	fmt.Println("年龄：")
+	fmt.Scanln(&Age)
+	fmt.Println("性别：")
+	fmt.Scanln(&Gender)
+	fmt.Println("电话：")
+	fmt.Scanln(&Phone)
+	fmt.Println("电子邮件：")
+	fmt.Scanln(&Email)
+
+	// id需要系统分配
+	cv.customService.AddCustomer(Age, Name, Gender, Phone, Email)
+
+}
+
+func (cv *customView) DeleteCustomer() {
+	var id int
+	var confirm string // 必须是string类型
+	fmt.Println("--------删除客户--------")
+	fmt.Println("请输入ID:")
+	_, _ = fmt.Scanln(&id)
+	fmt.Println("是否确认(Y or N):")
+	_, _ = fmt.Scanln(&confirm)
+	if confirm == "Y" {
+		flag := cv.customService.DeleteCustomer(id)
+		if flag {
+			fmt.Println("--------删除成功--------")
+		} else {
+			fmt.Println("--------删除失败--------")
+		}
+	}
+
 }
 
 // 显示主菜单
@@ -48,16 +79,16 @@ func (view *customView) mainView() {
 		_, _ = fmt.Scanln(&(view.key))
 		switch view.key {
 		case "1":
-			fmt.Println("添加客户")
+			view.AddCustomer()
 		case "2":
 			fmt.Println("修改客户")
 		case "3":
-			fmt.Println("删除客户")
+			view.DeleteCustomer()
 		case "4":
 			view.List()
 		case "5":
 			fmt.Println("退出")
-			view.SetLoop(false)
+			view.loop = false
 		default:
 			fmt.Println(errors.New("指令输入不正确!!!!"))
 
