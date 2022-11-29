@@ -8,7 +8,8 @@ import (
 )
 
 func main() {
-	file, err := os.Open("C:/Users/23844/Desktop/goproject/src/go_code/chapter12/filedemo02/files/1.txt")
+	file, err := os.Open("C:\\Users\\23844\\Downloads\\test.txt")
+
 	if err != nil {
 		fmt.Println("open file err=", err)
 	}
@@ -24,7 +25,7 @@ func main() {
 	for {
 		str, err := reader.ReadString('\n') // 读到换行符就结束
 		// io.EOF表示文件的末尾
-		if err != io.EOF {
+		if err == io.EOF {
 			break
 		}
 		fmt.Print(str)
