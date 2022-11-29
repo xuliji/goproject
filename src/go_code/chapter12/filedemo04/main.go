@@ -26,7 +26,7 @@ func main() {
 	}
 	// 因为writer是带缓存的, 因此使用WriteString方法时
 	// 内容先写到缓存要通过writer.Flush()写到文件中
-	err = writer.Flush()
+	err = writer.Flush() // 必须要写
 	if err != nil {
 		fmt.Println("写入文件失败")
 	}
