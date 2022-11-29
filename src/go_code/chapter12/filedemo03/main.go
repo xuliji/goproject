@@ -12,6 +12,6 @@ func main() {
 	if err != nil {
 		fmt.Println("err=", err)
 	}
-	fmt.Printf("%v", file)
+	fmt.Printf("%v", string(file))
 	// 不需要显式的open和close文件, 不需要去管理
 }
