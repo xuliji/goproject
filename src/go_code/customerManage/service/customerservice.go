@@ -45,6 +45,7 @@ func (c *CustomerService) FindByid(Id int) int {
 	return -1
 }
 
+// DeleteCustomer 删除客户
 func (c *CustomerService) DeleteCustomer(id int) bool {
 	Index := c.FindByid(id)
 	if Index == -1 {
@@ -52,5 +53,15 @@ func (c *CustomerService) DeleteCustomer(id int) bool {
 	}
 	// 如何从切片删除一个元素
 	c.customers = append(c.customers[:Index], c.customers[Index+1:]...)
+	return true
+}
+
+// Updete 更新用户信息
+func (c *CustomerService) Updete(id int) bool {
+	Index := c.FindByid(id)
+	if Index == -1 {
+		return false
+	}
+
 	return true
 }
