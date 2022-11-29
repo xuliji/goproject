@@ -10,7 +10,7 @@ type CustomerService struct {
 }
 
 // Customers 返回customer切片
-func (c CustomerService) Customers() []model.Customer {
+func (c CustomerService) ReturnCustomers() []model.Customer {
 	return c.customers
 }
 

@@ -1,10 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+	"goproject/src/go_code/customerManage/service"
+)
 
 type customView struct {
 	key  string // 接收用户输入
 	loop bool   //是否循环显示菜单
+	// 增加一个CustomerService类型字段
+	customService *service.CustomerService
 }
 
 // GetLoop SetLoop get和set方法
@@ -14,6 +20,17 @@ func (view *customView) GetLoop() bool {
 
 func (view *customView) SetLoop(loop bool) {
 	view.loop = loop
+}
+
+func (cv *customView) List() {
+	fmt.Println("--------------------" +
+		"客户列表" + "--------------------")
+	fmt.Println("编号\t姓名\t性别\t年龄\t电话\t邮箱")
+	for _, v := range cv.customService.ReturnCustomers() {
+		v.GetInfo()
+	}
+	fmt.Println("--------------------" +
+		"客户列表完成" + "--------------------")
 }
 
 // 显示主菜单
@@ -28,7 +45,7 @@ func (view *customView) mainView() {
 		fmt.Print("请选择(1-5):")
 
 		// 获取输入
-		fmt.Scanln(&(view.key))
+		_, _ = fmt.Scanln(&(view.key))
 		switch view.key {
 		case "1":
 			fmt.Println("添加客户")
@@ -37,12 +54,12 @@ func (view *customView) mainView() {
 		case "3":
 			fmt.Println("删除客户")
 		case "4":
-			fmt.Println("客户列表")
+			view.List()
 		case "5":
 			fmt.Println("退出")
 			view.SetLoop(false)
 		default:
-			fmt.Println("命令输出不正确")
+			fmt.Println(errors.New("指令输入不正确!!!!"))
 
 		}
 		if !view.loop {
@@ -54,7 +71,7 @@ func (view *customView) mainView() {
 
 func main() {
 	// 实例化结构体
-	view := customView{loop: true}
+	view := customView{loop: true, key: "", customService: service.NewCustomerService()}
 	view.mainView()
 
 }
