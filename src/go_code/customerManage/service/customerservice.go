@@ -57,8 +57,7 @@ func (c *CustomerService) DeleteCustomer(id int) bool {
 }
 
 // Updete 更新用户信息
-func (c *CustomerService) Updete(id int) bool {
-	Index := c.FindByid(id)
+func (c *CustomerService) Updete(Index int) bool {
 	if Index == -1 {
 		return false
 	}
