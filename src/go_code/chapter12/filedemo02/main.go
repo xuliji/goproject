@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("C:\\Users\\23844\\Downloads\\test.txt")
+	file, err := os.Open("C:\\Users\\23844\\Desktop\\goproject\\src\\go_code\\chapter12\\filedemo02\\files\\1.txt")
 
 	if err != nil {
 		fmt.Println("open file err=", err)
