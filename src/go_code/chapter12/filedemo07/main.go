@@ -31,5 +31,4 @@ func main() {
 	src_path := "src/go_code/chapter12/filedemo07/file01/1.png"
 	dst_path := "src/go_code/chapter12/filedemo07/file02/2.png"
 	CopyFile(src_path, dst_path)
-
 }
