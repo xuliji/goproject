@@ -17,5 +17,8 @@ func main() {
 	flag.StringVar(&host, "h", "192.168.3.1", "主机, 默认为192.168.3.1")
 	flag.IntVar(&port, "p", 8080, "端口号,默认为8080")
 
+	// 必须转换
+	flag.Parse()
+
 	fmt.Println(user, pwd, host, port)
 }
