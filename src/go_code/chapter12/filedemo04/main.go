@@ -31,4 +31,18 @@ func main() {
 		fmt.Println("写入文件失败")
 	}
 
+	file01, err1 := os.OpenFile("src/go_code/chapter12/filedemo04/files/test01.txt", os.O_TRUNC|os.O_WRONLY, 777)
+	defer file01.Close()
+	if err1 != nil {
+		panic(err)
+	}
+	writer1 := bufio.NewWriter(file01)
+	str1 := "我爱你\n"
+	for i := 0; i < 10; i++ {
+		writer1.WriteString(str1)
+	}
+	if err := writer1.Flush(); err != nil {
+		panic(err)
+	}
+
 }
